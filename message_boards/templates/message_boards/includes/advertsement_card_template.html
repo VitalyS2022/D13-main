@@ -1,0 +1,12 @@
+<div class="card">
+        <h5 class="card-header">{{ advertsement.id }}</h5>
+    <div class="card-body">
+        <p class="card-text">{{ advertsement.title }}</p>
+        <p class="card-text">{{ advertsement.body|safe }}</p>
+        <p class="card-text">{{ advertsement.get_category_display }}</p>
+
+        {% block button_look %}
+
+        {% endblock button_look %}
+    </div>
+</div>

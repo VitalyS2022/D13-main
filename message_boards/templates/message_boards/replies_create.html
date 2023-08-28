@@ -1,0 +1,12 @@
+{% extends 'message_boards/advertsement_detail.html' %}
+
+{% block replies %}
+    <hr>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+<!--        <p>{{ advertsement.title }}</p>-->
+        <input type="submit" value="Отправить" class="btn btn-primary">
+    </form>
+
+{% endblock replies %}

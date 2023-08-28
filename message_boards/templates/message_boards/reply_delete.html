@@ -1,0 +1,13 @@
+{% extends 'default.html' %}
+
+{% block title %}
+    Удалить отклтк
+{% endblock title %}
+
+{% block content %}
+    <h2>Вы действительно хотите удалить данный отклик?</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" value="подтвердить">
+    </form>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'default.html' %}
+
+{% block title %}
+    Reply Detail
+{% endblock title %}
+
+{% block content %}
+
+    <div>
+        {% include 'message_boards/includes/reply_card_template.html' %}
+    </div>
+
+    {% if request.user == advertsement.user %}
+        <a href="" class="btn btn-primary">Редактировать</a>
+    {% else %}
+        <a target="_blank" href="{% url 'reply_accept' reply.id %}" class="btn btn-primary">Принять отклик</a>
+        <a href="{% url 'reply_delete' reply.id %}" class="btn btn-primary">Удалить</a>
+
+    {% endif %}
+    {% include 'message_boards/includes/button_back.html' %}
+{% endblock content %}

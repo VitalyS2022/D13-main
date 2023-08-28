@@ -1,0 +1,24 @@
+{% extends 'default.html' %}
+
+{% block title %}
+    Добавить новость
+{% endblock title %}
+
+{% block content %}
+    {% if True %}
+        <h2>Добавить/редактировать новое объявление</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }} <!-- Теперь нам нужна только готовая форма и кнопка -->
+            <input type="submit" value="Добавить/редактировать новость" class="btn btn-primary">
+        </form>
+    {% else %}
+        <h3>Вы должны быть автором чтобы редактировать пост</h3>
+        <hr>
+        <button><a href="">Стать автором</a></button>
+    {% endif %}
+
+    {% load static %}
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+{% endblock content %}

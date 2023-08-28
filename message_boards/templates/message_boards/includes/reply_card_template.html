@@ -1,0 +1,11 @@
+<div class="card">
+        <h5 class="card-header">{{ reply.id }}</h5>
+    <div class="card-body">
+        <p>Отклик на объявление {{ reply.advertsement_id }} от пользователя {{ reply.user_id }}</p>
+        <p class="card-text">{{ reply.body }}</p>
+<!--        <p class="card-text">{{ reply.get_category_display }}</p>-->
+        {% block button_look %}
+
+        {% endblock button_look %}
+    </div>
+</div>
